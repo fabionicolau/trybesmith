@@ -10,7 +10,7 @@ const generateToken = (data: IUser): string => {
     algorithm: 'HS256',
   } as SignOptions;
 
-  const privateKey = process.env.JWT_SECRET as Secret;
+  const privateKey = process.env.JWT_SECRET || 'secret' as Secret;
   const { username, classe, level } = data as IUserPayload;
 
   const token = jwt.sign({ username, classe, level }, privateKey, jwtConfig);
