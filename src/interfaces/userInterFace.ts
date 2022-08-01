@@ -12,7 +12,13 @@ interface IUserPayload {
   level: number;
 }
 
+interface IUserLogin {
+  username: string;
+  password: string;
+}
+
 export {
   IUser,
   IUserPayload,
+  IUserLogin,
 };
