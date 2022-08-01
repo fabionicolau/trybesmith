@@ -7,6 +7,7 @@ interface IUser {
 }
 
 interface IUserPayload {
+  id?: number;
   username: string;
   classe: string;
   level: number;

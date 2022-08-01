@@ -6,14 +6,14 @@ dotenv.config();
 
 const generateToken = (data: IUser): string => {
   const jwtConfig = {
-    expiresIn: '1d',
+    expiresIn: '15m',
     algorithm: 'HS256',
   } as SignOptions;
 
   const privateKey = process.env.JWT_SECRET || 'secret' as Secret;
-  const { username, classe, level } = data as IUserPayload;
+  const { id, username, classe, level } = data as IUserPayload;
 
-  const token = jwt.sign({ username, classe, level }, privateKey, jwtConfig);
+  const token = jwt.sign({ id, username, classe, level }, privateKey, jwtConfig);
 
   return token;
 };

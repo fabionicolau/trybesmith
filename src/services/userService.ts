@@ -25,8 +25,8 @@ const validateFields = async ({ username, classe, level, password }: IUser) => {
 
 const createUser = async (user: IUser): Promise<string> => {
   const data = await validateFields(user);
-  await userModel.createUser(data);
-  const token = generateToken(data);
+  const userData = await userModel.createUser(data);
+  const token = generateToken(userData);
   return token;
 };
 

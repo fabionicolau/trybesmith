@@ -9,8 +9,13 @@ interface IOrderWithourProductsIds {
   userId: number;
 }
 
+interface ICreatedOrder {
+  userId: number;
+  productsIds: number[];
+}
+
 export {
   IOrder,
   IOrderWithourProductsIds,
-
+  ICreatedOrder,
 };

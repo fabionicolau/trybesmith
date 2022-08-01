@@ -8,7 +8,7 @@ const errors: { [key: string]: number } = {
 };
 const handleError = async (error: Error, _req: Request, res: Response) => {
   const { name, message } = error;
-  if (name === 'ValidationError' && message.includes('must be')) {
+  if (name === 'ValidationError' && message.includes('must')) {
     return res.status(errors.SyntaxError).json({ message });
   }
   const status: number = errors[name];
